@@ -1,0 +1,56 @@
+<div class="admin-tabs">
+    <p class='admin-tab' data-tab='categories'>Categories</p>
+    <p class='admin-tab' data-tab='users'>Users</p>
+</div>
+<div class="admin-container">
+</div>
+
+<script>
+    var token = '{{ Session::token() }}';
+    var adminTab = '{{ route('adminTab') }}';
+</script>
+
+$('.admin-tab').on('click', function(){
+    var tab = $(this).data('tab');
+
+    $.ajax({
+        type: 'POST',
+        url : adminTab,
+        data: {
+            tab: tab
+        },
+        headers: {
+            'X-CSRF-TOKEN': token
+        },
+        success : function (data) {
+            $(".admin-container").html(data);
+            history.replaceState(null, null, '/admin/' + tab);
+        }
+    });
+});
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Category;
+use App\User;
+
+class AjaxController extends Controller
+{
+    public function adminTab(Request $request){
+        $tab = $request['tab'];
+
+        if ($tab == 'categories') {
+            $categories = Category::orderBy('created_at', 'desc')->get();
+            return view('partials/adminCategoriesTab', ['categories' => $categories]);
+        } else {
+            $users = User::orderBy('created_at', 'desc')->get();
+            return view('partials/adminUsersTab', ['users' => $users]);
+        }
+
+    }
+}
+
+        Route::post('/admin/categories', 'AjaxController@adminTab')->name('adminTab');
