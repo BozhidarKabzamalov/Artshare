@@ -8,8 +8,8 @@ Update {{ $image->name }} |
 
     <div class="wrapper">
         <div class="upload-container">
-            <form action="{{ route('updateArtwork', $image) }}" method="POST" enctype="multipart/form-data">
-
+            <form class='centered-form update-form' action="{{ route('updateArtwork', $image) }}" method="POST" enctype="multipart/form-data">
+                <p class='page-header'>Edit Artwork</p>
                 <div class="form-group">
                     <label class='label required' for="artwork-title">Title</label>
                     <input class='input' type="text" name="artwork-title" placeholder="Title" value='{{ $image->name }}'>
@@ -55,16 +55,16 @@ Update {{ $image->name }} |
                 {{ method_field('patch') }}
                 {{ csrf_field() }}
 
-                <button class='submit-btn' type="submit" name="submit">Save</button>
+                <button class='submit-btn publish' type="submit" name="submit">Save</button>
 
             </form>
 
             @if(Auth::user())
                 @if(Auth::id() === $image->user_id || Auth::user()->hasRole('Admin'))
-                    <form method="POST" action="{{route('DeleteArtwork', $image->id)}}">
+                    <form class='centered-form' method="POST" action="{{route('DeleteArtwork', $image->id)}}">
                         {{ csrf_field() }}
                         {{ method_field('delete') }}
-                        <button class='delete-btn' type="submit">Delete Image</button>
+                        <button class='delete-btn publish' type="submit">Delete Image</button>
                     </form>
                 @endif
             @endif

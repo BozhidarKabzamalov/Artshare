@@ -8,8 +8,8 @@ Sign In |
 
 <div class="wrapper">
     <div class="sign-in-container">
-        <form action='{{ route('signin') }}' method='POST'>
-
+        <form class='centered-form' action='{{ route('signin') }}' method='POST'>
+            <p class='page-header'>Sign In</p>
             <div class="form-group">
                 <label class='label required'>Username</label>
                 <input class='input' type='text' name='username' placeholder='Username' value='{{ Request::old('username') }}'>
@@ -23,7 +23,7 @@ Sign In |
             </div>
 
             {{ csrf_field() }}
-            <button class='submit-btn' type='submit'>Sign In</button>
+            <button class='submit-btn publish' type='submit'>Sign In</button>
             <a class='signUpInA' href='#'>Forgot password?</a>
             <a class='signUpInA' href='{{ route('signup') }}'>Don't have an account? Sign up!</a>
 

@@ -8,8 +8,8 @@ Settings {{ $user->username }} |
 
 <div class="wrapper">
     <div class='settings-container'>
-        <form method="post" action="{{ route('updateProfile', $user) }}" enctype="multipart/form-data">
-
+        <form class='centered-form' method="post" action="{{ route('updateProfile', $user) }}" enctype="multipart/form-data">
+            <p class='page-header'>Edit Profile</p>
             <div class='form-group'>
                 <label class='label' for="first_name">First name</label>
                 <input class='input' type="text" name="first_name" value="{{ $user->first_name }}" />
@@ -39,7 +39,7 @@ Settings {{ $user->username }} |
             {{ csrf_field() }}
             {{ method_field('patch') }}
 
-            <button class='submit-btn' type="submit" name="submit">Save</button>
+            <button class='submit-btn publish' type="submit" name="submit">Save</button>
 
         </form>
     </div>

@@ -8,8 +8,8 @@ Sign Up |
 
 <div class="wrapper">
     <div class="sign-up-container">
-        <form action='{{ route('signup') }}' method='POST'>
-
+        <form class='centered-form' action='{{ route('signup') }}' method='POST'>
+            <p class='page-header'>Sign Up</p>
             <div class="form-group">
                 <label class='label required'>First Name</label>
                 <input class='input' type='text' name='firstName' placeholder='First Name' value='{{ Request::old('firstName') }}'>
@@ -41,7 +41,7 @@ Sign Up |
             </div>
 
             {{ csrf_field() }}
-            <button class='submit-btn' type='submit'>Sign Up</button>
+            <button class='submit-btn publish' type='submit'>Sign Up</button>
 
             <a class='signUpInA' href='{{ route('signin') }}'>Already have an account? Sign in!</a>
 

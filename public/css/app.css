@@ -44,7 +44,12 @@ body {
     -webkit-box-shadow: 0 0 0 30px white inset;
 }
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+.centered-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 .category-select {
     -webkit-appearance: none;
@@ -173,6 +178,13 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 20px;
+}
+.categories-flexbox input {
+    margin-right: 10px;
+}
+.create-category {
+    margin-bottom: 20px;
 }
 .sign-up-container, .sign-in-container, .upload-container, .admin-container, .settings-container {
     padding: 10px;
@@ -208,7 +220,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .profile-container-picture {
     margin-top: 35px;
@@ -218,7 +230,7 @@ body {
     object-fit: cover;
 }
 .new-avatar-picture {
-    margin: 0 15px 5px 0;
+    margin: 0 15px 0 0;
     border-radius: 300px;
     height: 100px;
     width: 100px;
@@ -277,6 +289,17 @@ body {
     opacity: 0;
     width: 100%;
     height: 100%;
+}
+.page-header {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+.publish {
+    width: 100%;
+    font-size: 18px !important;
+    font-weight: 500;
 }
 /* Specific Image View Start */
 .artwork-flexbox {
@@ -432,6 +455,9 @@ body {
 }
 .comment-form {
     margin-bottom: 15px;
+}
+.update-form {
+    margin-bottom: 20px;
 }
 .comment-textarea {
     width: 100%;

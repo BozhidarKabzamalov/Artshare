@@ -8,8 +8,8 @@ Upload |
 
 <div class="wrapper">
     <div class="upload-container">
-        <form action="{{ route('uploadArtwork') }}" method="POST" enctype="multipart/form-data">
-
+        <form class='centered-form' action="{{ route('uploadArtwork') }}" method="POST" enctype="multipart/form-data">
+            <p class='page-header'>Upload</p>
             <div class="form-group">
                 <label class='label required' for="artwork-title">Title</label>
                 <input class='input' type="text" name="artwork-title" placeholder="Title" value='{{ Request::old('artwork-title') }}'>
@@ -61,7 +61,7 @@ Upload |
             </div>
 
              {{ csrf_field() }}
-            <button class='submit-btn' type="submit" name="submit">Publish</button>
+            <button class='submit-btn publish' type="submit" name="submit">Publish</button>
 
         </form>
     </div>
