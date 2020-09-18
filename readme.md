@@ -11,3 +11,20 @@ The application utilizes the Model-View-Controller architecture which separates 
 * Supports test-driven development
 * Fast development process
 * Possibility for parallel work on different modules
+
+**Front-end responsibilities:**
+
+* Neatly present data to the users
+* Add interactivity to the application through JavaScript
+* Make AJAX requests in order to send and retrieve data from the back-end
+
+**Back-end responsibilities:**
+
+* Create, read, update and delete data
+* Store information inside the database
+* Execute MySQL queries
+* Deal with user authentication and user roles
+* Validate data
+* Handle file uploads
+* Deal with image handling and manipulation
+* Handle routing
