@@ -30,3 +30,5 @@ The application utilizes the Model-View-Controller architecture which separates 
 * Handle routing
 
 ![2](https://user-images.githubusercontent.com/16446652/93599744-459dd080-f9c7-11ea-9e4e-489cb4ee3af5.png)
+
+![3](https://user-images.githubusercontent.com/16446652/93599828-623a0880-f9c7-11ea-8a6c-e8de6641c088.png)
